@@ -27,9 +27,6 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Install
-          command: npm install
-      - run:
           name: Build project
           command: npm run build
       - persist_to_workspace:
@@ -43,7 +40,7 @@ jobs:
     steps:
       - checkout
       - attach_workspace:
-          at: /workspace
+          at: /home/circleci/workspace
       - run:
           name: Install AWS CLI
           command: |
@@ -52,7 +49,7 @@ jobs:
       - run:
           name: Deploy to S3
           command: |
-            aws s3 sync /workspace/build s3://your-bucket-name --delete
+            aws s3 sync /home/circleci/workspace/build s3://your-bucket-name --delete
 
 workflows:
   version: 2
