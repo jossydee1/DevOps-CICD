@@ -9,7 +9,7 @@ jobs:
   install-dependencies:
     executor: node-executor
     steps:
-      # - checkout
+      - checkout
       - run:
           name: Install dependencies
           command: npm install
