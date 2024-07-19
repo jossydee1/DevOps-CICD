@@ -27,6 +27,9 @@ jobs:
     steps:
       - checkout
       - run:
+          name: Install
+          command: npm install
+      - run:
           name: Build project
           command: npm run build
       - persist_to_workspace:
