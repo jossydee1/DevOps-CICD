@@ -52,7 +52,7 @@ jobs:
       - run:
           name: Deploy to S3
           command: |
-            aws s3 sync /home/circleci/workspace/build s3://your-bucket-name --delete
+            aws s3 sync /home/circleci/workspace/build s3://cdcd-deployed --delete
 
 workflows:
   version: 2
