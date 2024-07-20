@@ -9,7 +9,7 @@ jobs:
   install-dependencies:
     executor: node-executor
     steps:
-      - checkoutt
+      - checkout
       - run:
           name: Install dependencies
           command: npm install
@@ -28,7 +28,7 @@ jobs:
       - checkout
       - run:
           name: Install
-          command: npm install
+          command: npn install
       - run:
           name: Build project
           command: npm run build
